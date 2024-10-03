@@ -69,7 +69,7 @@ The folder structure on running
 fast-template init totrac
 ```
 is
-
+```md
 TOTRAC
 ├── database
 │   ├── db_handlers
@@ -126,7 +126,7 @@ TOTRAC
 ├── Readme.md
 ├── requirements.txt
 
-
+```
 
 #### Pre-configured Services
 The root folder contains core services required for the backend, including:
