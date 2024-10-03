@@ -7,13 +7,13 @@ Easily generate a template for your [FastAPI](http://fastapi.tiangolo.com) appli
 You can install Fast Template via `pip`:
 
 ```sh
-pip install fast_template
+pip install fast-template-python
 ```
 
 Or using `poetry`:
 
 ```sh
-poetry add fast_template
+poetry add fast-template-python
 ```
 
 ### Usage
