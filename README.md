@@ -64,6 +64,70 @@ Router Layer → Service Layer → Database Layer
 
 The service layer handles the data exchange between the router and the database, while the router serializes requests and passes them to the service.
 
+The folder structure on running
+```sh
+fast-template init totrac
+```
+is
+
+TOTRAC
+├── database
+│   ├── db_handlers
+│   │   ├── __init__.py
+│   │   ├── auth_db_handler.py
+│   ├── orms
+│   │   ├── __init__.py
+│   │   ├── auth_orm.py
+├── job_manager
+│   ├── email
+│   │   ├── mailer.py
+│   ├── job_runner.py
+├── root
+│   ├── templates
+│   │   ├── auth
+│   │   │   ├── info_email_template.html
+│   ├── utils
+│   │   ├── abstract_base.py
+│   │   ├── base_models_abstract.py
+│   ├── app_routers.py
+│   ├── app.py
+│   ├── arq_worker.py
+│   ├── constants.py
+│   ├── database.py
+│   ├── logging.py
+│   ├── redis_manager.py
+│   ├── settings.py
+├── routers
+│   ├── __init__.py
+│   ├── auth_router.py
+│   ├── miscellaneous_router.py
+├── schemas
+│   ├── __init__.py
+│   ├── auth_schemas.py
+│   ├── error_messages_schema.py
+│   ├── file_upload_schema.py
+│   ├── response_info_schema.py
+├── services
+│   ├── utils
+│   │   ├── auth_utils.py
+│   │   ├── exceptions.py
+│   │   ├── file_downloader.py
+│   │   ├── file_uploader_utils.py
+│   │   ├── google_auth_utils.py
+│   │   ├── token_utils.py
+│   ├── auth_services.py
+│   ├── miscellaneous_services.py
+├── venv
+├── __init__.py
+├── .gitignore
+├── make_db_migrations.py
+├── Makefile
+├── pyproject.toml
+├── Readme.md
+├── requirements.txt
+
+
+
 #### Pre-configured Services
 The root folder contains core services required for the backend, including:
 1. Database setup
@@ -83,3 +147,4 @@ This package is a work in progress, created to streamline the setup of backend p
 ### 🐛 Bugs/Feature Requests
 
 Contributions are welcome! Feel free to open a pull request or an issue for feature requests or bug reports.
+
