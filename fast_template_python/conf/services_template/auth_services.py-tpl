@@ -3,7 +3,6 @@ import traceback
 import uuid
 
 from fastapi import HTTPException, status
-import nanoid
 
 from {{ project_name}}.schemas.auth_schemas import (
     Login,
@@ -233,7 +232,7 @@ async def request_forgot_password_link(user_email: str):
     containing the user_id would be sent to the frontend and the rest password endpoint would have to supply the token
 
     """
-    unique_token = nanoid.generate(size=15)  # Unique token to be put in the link
+    unique_token = str(uuid.uuid4())  # Unique token to be put in the link
 
     try:
         user = await auth_db_handler.get_user_with_email(email=user_email)

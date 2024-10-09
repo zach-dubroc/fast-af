@@ -9,5 +9,4 @@ arq
 asyncpg
 PyJWT
 itsdangerous
-nanoid
 fastapi_mail
