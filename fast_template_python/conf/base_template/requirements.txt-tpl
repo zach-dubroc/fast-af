@@ -17,5 +17,6 @@ aiohttp
 uvicorn
 requests
 boto3
-bycript
+bcrypt
 orjson
+python-multipart

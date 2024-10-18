@@ -11,7 +11,7 @@ from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from passlib.context import CryptContext
 from itsdangerous.url_safe import URLSafeSerializer
 from itsdangerous import BadTimeSignature, BadSignature
-from passlib.exc import UnkownHashError 
+from passlib.exc import UnknownHashError
 
 
 from {{ project_name}}.root.settings import Settings
