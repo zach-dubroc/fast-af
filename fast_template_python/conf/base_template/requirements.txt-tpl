@@ -10,3 +10,12 @@ asyncpg
 PyJWT
 itsdangerous
 fastapi_mail
+psycopg2-binary
+greenlet
+passlib
+aiohttp
+uvicorn
+requests
+boto3
+bycript
+orjson

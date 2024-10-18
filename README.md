@@ -37,7 +37,7 @@ Once the template is set up, you'll need to create a `.env` file as required by 
 You can set up database migrations using Alembic:
 
 ```sh
-alembic init migrations
+alembic init —template async migrations
 ```
 
 For more information on using Alembic, check the [official tutorial](https://alembic.sqlalchemy.org/en/latest/tutorial.html#creating-an-environment).
