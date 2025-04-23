@@ -1,37 +1,10 @@
 # FAST-AF
 
-**FAST-AF** is a FastAPI project generator designed to help developers quickly scaffold backend applications with varying levels of complexity. It provides three template options: **lightweight (sm)**, **standard (md)**, and **full-stack (lg)**, catering to different project needs and developer expertise.
-
-This project is **forked from [Peter Akande's Fast Template Python](https://github.com/PeterAkande/fast-template-python)** 
-
----
-
-## Features
-
-### Template Options
-(future)
-1. **Lightweight (sm)**:
-project_name
-├── routers
-│   ├── auth_router.py
-│   ├── crud_router.py
-├── root
-│   ├── app.py
-│   ├── database.py
-│   ├── settings.py
-├── schemas
-│   ├── auth_schemas.py
-│   ├── crud_schemas.py
-├── .env
-├── requirements.txt
-2. **Standard (md)**:
-3. **Full-Stack (lg)**:
-
-
----
+**FAST-AF** is a FastAPI project generator designed to help developers quickly scaffold backend applications
+**forked from [Peter Akande's Fast Template Python](https://github.com/PeterAkande/fast-template-python)** 
 
 ## Installation
-(not implemented)
+(not published)
 
 You can install FAST-AF via `pip`:
 
@@ -49,7 +22,7 @@ poetry add fast-af
 
 ## Usage
 
-To initialize a project, in an existing root folder:
+To initialize a project, in the root folder:
 
 ```sh
 fast-af sm .
