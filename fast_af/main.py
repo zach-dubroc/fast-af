@@ -14,20 +14,20 @@ def callback():
     pass
 
 
-@app.command(name="init")
-def init(
-    project_name: str,
-    root_directory: Optional[str] = None,
-    create_venv: bool = True,
-):
-    """
-    Initialize a FastAPI project from template.
-    """
-    create_fast_template(
-        project_name=project_name,
-        root_directory=root_directory,
-        create_venv=create_venv,
-    )
+# @app.command(name="init")
+# def init(
+#     project_name: str,
+#     root_directory: Optional[str] = None,
+#     create_venv: bool = True,
+# ):
+#     """
+#     Initialize a FastAPI project from template.
+#     """
+#     create_fast_template(
+#         project_name=project_name,
+#         root_directory=root_directory,
+#         create_venv=create_venv,
+#     )
 @app.command(name="sm")
 def sm_frap(
     project_name: str = typer.Argument(..., help="Name of the project"),

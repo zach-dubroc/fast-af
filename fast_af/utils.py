@@ -23,9 +23,8 @@ def is_binary(file_path: str) -> bool:
         return False
     except Exception as e:
         print(f"Error reading file {file_path}: {e}")
-        return True
 
-    return True
+   
 
 
 def create_directory(directory: str):

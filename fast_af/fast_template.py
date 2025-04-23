@@ -51,7 +51,8 @@ def create_venv_cross_platform(root_directory: str) -> bool:
         requirements_path = os.path.join(root_directory, "requirements.txt")
         if os.path.exists(requirements_path):
             print(f"{BLUE}installing dependencies from {requirements_path}{RESET}")
-            subprocess.run([pip_venv, "install", "-r", requirements_path], check=True)
+            # subprocess.run([pip_venv, "install", "-r", requirements_path], check=True)
+            # for installing deps but leaving commented until formatting is further along
         else:
             print(f"{RED}requirements.txt not found in {root_directory}{RESET}")
 
@@ -216,51 +217,59 @@ def create_fast_template(
         create_services_template(project_name, destination_directory)
     elif template_type == "md":
         print(f"{BLUE}Standard template (md){RESET}")
-        create_base_template(project_name, root_directory)
-        create_database_template(project_name, destination_directory)
-        create_job_manager_template(project_name, destination_directory)
-        create_root_template(project_name, destination_directory)
-        create_routers_template(project_name, destination_directory)
-        create_schemas_template(project_name, destination_directory)
-        create_services_template(project_name, destination_directory)
+        # create_base_template(project_name, root_directory)
+        # create_database_template(project_name, destination_directory)
+        # create_job_manager_template(project_name, destination_directory)
+        # create_root_template(project_name, destination_directory)
+        # create_routers_template(project_name, destination_directory)
+        # create_schemas_template(project_name, destination_directory)
+        # create_services_template(project_name, destination_directory)
     elif template_type == "lg":
         print(f"{BLUE}Full template with React frontend (lg){RESET}")
-        create_base_template(project_name, root_directory)
-        create_database_template(project_name, destination_directory)
-        create_job_manager_template(project_name, destination_directory)
-        create_root_template(project_name, destination_directory)
-        create_routers_template(project_name, destination_directory)
-        create_schemas_template(project_name, destination_directory)
-        create_services_template(project_name, destination_directory)
+        # create_base_template(project_name, root_directory)
+        # create_database_template(project_name, destination_directory)
+        # create_job_manager_template(project_name, destination_directory)
+        # create_root_template(project_name, destination_directory)
+        # create_routers_template(project_name, destination_directory)
+        # create_schemas_template(project_name, destination_directory)
+        # create_services_template(project_name, destination_directory)
         # sm template should just give base api with easily customizable crud routes, db has to be setup seperately
-        # md should spin up datebase as well 
+        # md should spin up database as well 
         # lg will spin up db and generate boilerplate react frontend with basic crud functionality
     if create_venv:
         print(f"{BLUE}{BOLD}Setting up virtual environment{RESET}")
         if create_venv_cross_platform(root_directory):
-            print(f"{GREEN}{BOLD}✓ virtual environment created successfully{RESET}")
-            print(f"{BLUE}To activate the virtual environment:{RESET}")
+            print(f"{GREEN}{BOLD}✓ virtual environment created\n✓ dependencies installed successfully{RESET}")
+            border = f"{BLUE}{BOLD}{'=' * 50}{RESET}"
+            print(border)
+            print(f"{BLUE}{BOLD}To activate the virtual environment:{RESET}")
             if platform.system() == "Windows":
-                print(f"  {GREEN}cd {root_directory}{RESET}")
-                print(f"  {GREEN}.venv\\Scripts\\activate.bat{RESET}  # for command")
-                print(f"  {GREEN}.venv/scripts/activate{RESET}  # for powershell")
+                print(f"{BLUE}in the project root\ndepending on which terminal you use, run:{RESET}")
+                print(f"- {GREEN}.venv\\Scripts\\activate.bat{RESET}  # for command prompt")
+                print(f"- {GREEN}.venv/scripts/activate{RESET}  # for powershell")
+                print(f"- {GREEN}source .venv/scripts/activate{RESET}  # for bash")
             else:
-                print(f"  {GREEN}cd {root_directory}{RESET}")
-                print(f"  {GREEN}source .venv/bin/activate{RESET}  # for bash")
+                print(f"{GREEN}cd {root_directory}{RESET}")
+                print(f"{GREEN}source .venv/bin/activate{RESET}  # for bash")
+            print(border)
         else:
+            border = f"{BLUE}{BOLD}{'=' * 50}{RESET}"
+            print(border)
             print(f"{RED}{BOLD}✗ WHAT WE HAVE HERE IS A FAILURE TO COMMUNICATE. set it up manually:{RESET}")
-            print(f"  {BLUE}get to the root directory:{RESET}")
-            print(f"  {GREEN}cd {root_directory}{RESET}")
-            print(f"  {BLUE}create the virtual environment:{RESET}")
-            print(f"  {GREEN}{python_cmd} -m venv .venv{RESET}")
-            print(f"  {BLUE}then activate it with:{RESET}")
+            print(f"{BLUE}get to the root directory:{RESET}")
+            print(f"{GREEN}cd {root_directory}{RESET}")
+            print(f"{BLUE}create the virtual environment:{RESET}")
+            print(f"{GREEN}{python_cmd} -m venv .venv{RESET}")
+            print(f"{BLUE}{BOLD}then activate it with:{RESET}")
             if platform.system() == "Windows":
-                print(f"  {GREEN}.venv/scripts/activate{RESET}  # for powershell")
-                print(f"  {GREEN}.venv\\Scripts\\activate.bat{RESET}  # for command prompt")
+                print(f"{GREEN}.venv/scripts/activate{RESET}  # for powershell")
+                print(f"{GREEN}.venv\\Scripts\\activate.bat{RESET}  # for command prompt")
+                print(f"{GREEN}source .venv/bin/activate{RESET}  # for bash/zsh")
             else:
-                print(f"  {GREEN}source .venv/bin/activate{RESET}  # for bash/zsh")
-            print(f"  {BLUE}then install dependencies:{RESET}")
-            print(f"  {GREEN}pip install -r requirements.txt{RESET}")
+                print(f"{GREEN}source .venv/bin/activate{RESET}  # for bash/zsh")
+            print(border)
+            print(f"{BLUE}then install dependencies:{RESET}")
+            print(f"{GREEN}pip install -r requirements.txt{RESET}")
     else:
         try:
             with open(os.path.join(root_directory, "requirements.txt"), "w") as f:
