@@ -51,8 +51,9 @@ def create_venv_cross_platform(root_directory: str) -> bool:
         requirements_path = os.path.join(root_directory, "requirements.txt")
         if os.path.exists(requirements_path):
             print(f"{BLUE}installing dependencies from {requirements_path}{RESET}")
-            # subprocess.run([pip_venv, "install", "-r", requirements_path], check=True)
-            # for installing deps but leaving commented until formatting is further along
+            # pippin aint easy
+            subprocess.run([pip_venv, "install", "-r", requirements_path], check=True)
+            # can comment out when just messing w structure
         else:
             print(f"{RED}requirements.txt not found in {root_directory}{RESET}")
 
@@ -206,36 +207,14 @@ def create_fast_template(
 
     destination_directory = os.path.join(root_directory, project_name)
     create_directory(destination_directory)
-    if template_type == "sm":
-        print(f"{BLUE}Lightweight template (sm){RESET}")
-        create_base_template(project_name, root_directory)
-        create_database_template(project_name, destination_directory)
-        create_job_manager_template(project_name, destination_directory)
-        create_root_template(project_name, destination_directory)
-        create_routers_template(project_name, destination_directory)
-        create_schemas_template(project_name, destination_directory)
-        create_services_template(project_name, destination_directory)
-    elif template_type == "md":
-        print(f"{BLUE}Standard template (md){RESET}")
-        # create_base_template(project_name, root_directory)
-        # create_database_template(project_name, destination_directory)
-        # create_job_manager_template(project_name, destination_directory)
-        # create_root_template(project_name, destination_directory)
-        # create_routers_template(project_name, destination_directory)
-        # create_schemas_template(project_name, destination_directory)
-        # create_services_template(project_name, destination_directory)
-    elif template_type == "lg":
-        print(f"{BLUE}Full template with React frontend (lg){RESET}")
-        # create_base_template(project_name, root_directory)
-        # create_database_template(project_name, destination_directory)
-        # create_job_manager_template(project_name, destination_directory)
-        # create_root_template(project_name, destination_directory)
-        # create_routers_template(project_name, destination_directory)
-        # create_schemas_template(project_name, destination_directory)
-        # create_services_template(project_name, destination_directory)
-        # sm template should just give base api with easily customizable crud routes, db has to be setup seperately
-        # md should spin up database as well 
-        # lg will spin up db and generate boilerplate react frontend with basic crud functionality
+    print(f"{BLUE}Lightweight template (sm){RESET}")
+    create_base_template(project_name, root_directory)
+    create_database_template(project_name, destination_directory)
+    create_job_manager_template(project_name, destination_directory)
+    create_root_template(project_name, destination_directory)
+    create_routers_template(project_name, destination_directory)
+    create_schemas_template(project_name, destination_directory)
+    create_services_template(project_name, destination_directory)
     if create_venv:
         print(f"{BLUE}{BOLD}Setting up virtual environment{RESET}")
         if create_venv_cross_platform(root_directory):

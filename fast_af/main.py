@@ -37,11 +37,8 @@ def sm_frap(
     """
     Initialize a lightweight FastAPI project (sm).
     """
-    # CHANGE: Added sm-frap command for lightweight template.
-    # Reason: Supports minimal API without database or job manager.
     create_fast_template(
         project_name=project_name,
         root_directory=root_directory,
-        create_venv=create_venv,
-        template_type="sm",
+        create_venv=create_venv
     )

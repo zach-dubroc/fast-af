@@ -17,6 +17,6 @@ aiohttp
 uvicorn
 requests
 boto3
-bcrypt
 orjson
 python-multipart
+bcrypt==4.0.1
