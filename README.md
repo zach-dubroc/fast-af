@@ -1,10 +1,10 @@
 # FAST-AF
 
-**FAST-AF** is a FastAPI project generator designed to help developers quickly scaffold backend applications
+**fast-af** is a FastAPI project generator designed to help developers quickly scaffold backend applications
 **forked from [Peter Akande's Fast Template Python](https://github.com/PeterAkande/fast-template-python)** 
 
 ## Installation
-(not published)
+(not published yet)
 
 You can install FAST-AF via `pip`:
 
@@ -22,16 +22,16 @@ poetry add fast-af
 
 ## Usage
 
-To initialize a project, in the root folder:
+To initialize a project, in the existing root folder:
 
 ```sh
-fast-af sm .
+fast-af sm <project_name>
 ```
 
 
-Once the template is set up, you'll need to create a `.env` file as required by the `settings.py` file (feel free to modify it to suit your needs).
-An example of a `.env` is:
+Once the template is set up, you'll need to navigate to your `.env` file as required by the `settings.py` file (modify the values specified to suit your enviroment, currently postgres, redis, and google credentials are required)
 ```
+
 POSTGRES_URL = postgresql+asyncpg://postgres@localhost/your_db_name
 
 ACCESS_TOKEN_SECRET = Your-Access-Token-Secret

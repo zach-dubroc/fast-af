@@ -231,6 +231,7 @@ def create_fast_template(
                 print(f"{GREEN}cd {root_directory}{RESET}")
                 print(f"{GREEN}source .venv/bin/activate{RESET}  # for bash")
             print(border)
+            print(f"{BLUE}{BOLD}once active, head to readme.md in the new folder{RESET}")
         else:
             border = f"{BLUE}{BOLD}{'=' * 50}{RESET}"
             print(border)

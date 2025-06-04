@@ -67,7 +67,7 @@ def create_files_in_directory(
             shutil.copyfile(src_file_path, dest_file_path)
             continue
 
-        print(f"Creating file: {dest_file_path}")
+        # print(f"Creating file: {dest_file_path}")
 
         # Try to read the file as text, replace keywords, and write the modified content
         try:

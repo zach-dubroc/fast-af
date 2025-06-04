@@ -32,7 +32,7 @@ async def background_mailer(
     template: str,
     attachments: list[UploadFile] = [],
 ):
-    await job = await schedule_job(
+    job = await schedule_job(
         date=datetime.now(),
         function_name="send_mail",
         subject=subject,
